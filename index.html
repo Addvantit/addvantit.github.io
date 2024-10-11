@@ -3,31 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mi Página Simple</title>
+    <title>Documentación de Extensiones en Business Central</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #004080;
+        }
+        h2 {
+            color: #0059b3;
+        }
+        a {
+            color: #0080ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Mi Página Simple</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Acerca de Mí</h2>
-            <p>Hola, soy un entusiasta del desarrollo web. Este es un proyecto simple para mostrar mis habilidades.</p>
-            <button id="alertButton">Haz clic en mí</button>
-        </section>
-        <section>
-            <h2>Mis Hobbies</h2>
-            <ul>
-                <li>Programar</li>
-                <li>Leer libros</li>
-                <li>Correr</li>
-            </ul>
-        </section>
-    </main>
+
+    <h1>Documentación Básica de Objetos en Business Central</h1>
+
+    <h2>¿Qué es Microsoft Dynamics 365 Business Central?</h2>
+    <p>
+        Microsoft Dynamics 365 Business Central es un sistema de gestión empresarial diseñado para ayudar a las empresas a gestionar finanzas, ventas, servicio al cliente y operaciones. Es una solución en la nube que se adapta a las necesidades de pequeñas y medianas empresas.
+    </p>
+
+    <h2>Objetos en Business Central</h2>
+    <p>En Business Central, los "objetos" son componentes que forman la base del sistema. Existen varios tipos de objetos, cada uno con una función específica:</p>
+    <ul>
+        <li><a href="#tablas">Tablas</a>: Almacenan datos, como información de clientes, proveedores, etc.</li>
+        <li><a href="#paginas">Páginas</a>: Interfaces que los usuarios ven e interactúan.</li>
+        <li><a href="#informes">Informes</a>: Generan reportes con información específica.</li>
+        <li><a href="#consultas">Consultas</a>: Extraen y combinan datos de diferentes tablas.</li>
+        <li><a href="#codeunits">Codeunits</a>: Contienen la lógica de negocio.</li>
+        <li><a href="#enums">Enums</a>: Tipos de datos con un conjunto de valores predefinidos.</li>
+        <li><a href="#page_extensions">Page Extensions</a>: Extienden las páginas existentes sin modificarlas.</li>
+        <li><a href="#table_extensions">Table Extensions</a>: Añaden nuevos campos a tablas existentes.</li>
+        <li><a href="#control_add_ins">Control Add-ins</a>: Permiten agregar controles personalizados a las páginas.</li>
+        <li><a href="#report_extensions">Report Extensions</a>: Permiten personalizar informes existentes.</li>
+    </ul>
+
+    <h2 id="tablas">Tablas</h2>
+    <p>Las tablas almacenan los datos que Business Central utiliza para su operación. Por ejemplo, la tabla "Customer" contiene datos como nombres, direcciones y números de contacto de los clientes.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Tablas</a>
+
+    <h2 id="paginas">Páginas</h2>
+    <p>Las páginas son la interfaz gráfica del usuario. Estas son las pantallas donde los usuarios interactúan con los datos en Business Central.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Páginas</a>
+
+    <h2 id="informes">Informes</h2>
+    <p>Los informes generan documentos con datos específicos para la toma de decisiones. Un ejemplo sería un informe de ventas mensual.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Informes</a>
+
+    <h2 id="consultas">Consultas</h2>
+    <p>Las consultas permiten extraer y combinar datos de diferentes tablas. Son útiles para obtener información sin crear un informe completo.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Consultas</a>
+
+    <h2 id="codeunits">Codeunits</h2>
+    <p>Los codeunits contienen la lógica de negocio. Aquí se definen los procesos y las interacciones entre los datos en Business Central.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Codeunits</a>
+
+    <h2 id="enums">Enums</h2>
+    <p>Los enums son tipos de datos que definen un conjunto de valores posibles. Por ejemplo, un enum podría definir el estado de un pedido como "Pendiente", "Enviado" o "Cancelado".</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Enums</a>
+
+    <h2 id="page_extensions">Page Extensions</h2>
+    <p>Las Page Extensions permiten extender las funcionalidades de las páginas existentes sin modificar su código fuente original.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Page Extensions</a>
+
+    <h2 id="table_extensions">Table Extensions</h2>
+    <p>Las Table Extensions permiten añadir nuevos campos a las tablas ya existentes en Business Central, sin modificar su estructura original.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Table Extensions</a>
+
+    <h2 id="control_add_ins">Control Add-ins</h2>
+    <p>Los Control Add-ins permiten agregar controles personalizados a las páginas de Business Central, como botones interactivos o gráficos visuales.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Control Add-ins</a>
+
+    <h2 id="report_extensions">Report Extensions</h2>
+    <p>Las Report Extensions permiten personalizar los informes existentes, añadiendo nuevos campos o modificando el diseño del informe sin alterar el original.</p>
+    <a href="https://github.com/microsoft/ALAppExtensions">Más sobre Report Extensions</a>
+
+    <h2>Extensiones en Business Central</h2>
+    <p>Las extensiones son una forma de personalizar y ampliar la funcionalidad de Business Central sin modificar el código base del sistema. Estas extensiones permiten añadir nuevas características, como páginas, tablas o informes, adaptando el sistema a las necesidades de cada empresa.</p>
+    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-extension-overview">Más sobre Extensiones</a>
+
+    <h2>Listado de Extensiones</h2>
+    <p>A continuación, se listan algunos repositorios en GitHub con ejemplos de extensiones de Business Central:</p>
+    <ul>
+        <li><a href="https://github.com/microsoft/ALAppExtensions">Microsoft ALAppExtensions</a></li>
+        <li><a href="https://github.com/ajkapps/BusinessCentral">BusinessCentral Extensions by AJK Apps</a></li>
+        <li><a href="https://github.com/xyz-company/business-central-extensions">XYZ Company Business Central Extensions</a></li>
+    </ul>
+
     <footer>
-        <p>&copy; 2024 Mi Página Simple. Todos los derechos reservados.</p>
+        <p>© 2024 Documentación de Extensiones Business Central | Powered by GitHub</p>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
