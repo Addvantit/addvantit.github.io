@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +13,24 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #0073e6;
-            padding: 1rem;
+            background-color: #9c27b0;
+            padding: 1.5rem 0;
             color: white;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         nav {
-            background-color: #005bb5;
+            background-color: #9c27b0;
             padding: 1rem;
             text-align: center;
             position: fixed;
@@ -45,13 +48,14 @@
 
         nav ul li {
             display: inline;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 500;
             transition: color 0.3s ease-in-out;
         }
 
@@ -65,15 +69,17 @@
         }
 
         h2 {
-            color: #005bb5;
+            color: #9c27b0;
             margin-bottom: 1rem;
             text-align: center;
+            font-size: 2.2rem;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            padding: 0 1rem;
         }
 
         .card {
@@ -81,20 +87,21 @@
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .card h3 {
             margin-top: 0;
-            color: #0073e6;
+            color: #9c27b0;
         }
 
         .accordion {
-            background-color: #0073e6;
+            background-color: #9c27b0;
             color: white;
             cursor: pointer;
             padding: 1rem;
@@ -102,6 +109,7 @@
             text-align: left;
             outline: none;
             transition: background-color 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .accordion:hover {
@@ -109,14 +117,16 @@
         }
 
         .accordion:after {
-            content: '\\002B'; /* Plus symbol */
+            content: '\\002B';
+            /* Plus symbol */
             font-size: 1.5rem;
             color: white;
             float: right;
         }
 
         .accordion.active:after {
-            content: "\\2212"; /* Minus symbol */
+            content: "\\2212";
+            /* Minus symbol */
         }
 
         .panel {
@@ -125,6 +135,7 @@
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             padding-left: 1.5rem;
+            border-left: 2px solid #0073e6;
         }
 
         .panel ul {
@@ -143,6 +154,7 @@
 
         .panel ul li a:hover {
             color: #ffdd57;
+            text-decoration: underline;
         }
 
         footer {
@@ -155,11 +167,34 @@
             bottom: 0;
         }
 
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Documentación de Extensiones para Business Central</h1>
+        <h1>Documentación de Extensiones para Proyecto MN del Golfo LS Central</h1>
     </header>
 
     <nav>
@@ -168,7 +203,7 @@
             <li><a href="#extensions">Extensiones</a></li>
             <li><a href="#objectives">Objetivos</a></li>
             <li><a href="#phases">Fases</a></li>
-            <li><a href="#contact">Contacto</a></li>
+
         </ul>
     </nav>
 
@@ -177,7 +212,8 @@
         <div class="grid-container">
             <div class="card">
                 <h3>Optimizar la Gestión de Inventarios</h3>
-                <p>Mejorar el control y la visibilidad de los materiales en las tres tiendas y el patio de distribución.</p>
+                <p>Mejorar el control y la visibilidad de los materiales en las tres tiendas y el patio de distribución.
+                </p>
             </div>
             <div class="card">
                 <h3>Mejorar la Atención al Cliente</h3>
@@ -197,7 +233,8 @@
         <div class="grid-container">
             <div class="card">
                 <h3>1. Análisis de Requerimientos</h3>
-                <p>Reuniones con los líderes de MN del Golfo para entender sus necesidades específicas en gestión de inventarios, ventas y finanzas.</p>
+                <p>Reuniones con los líderes de MN del Golfo para entender sus necesidades específicas en gestión de
+                    inventarios, ventas y finanzas.</p>
             </div>
             <div class="card">
                 <h3>2. Configuración de Business Central</h3>
@@ -222,15 +259,72 @@
         </div>
 
         <h2 id="extensions">Extensiones Instaladas</h2>
-        <button class="accordion">Lista de Extensiones</button>
-        <div class="panel">
+
+        <div>
             <ul>
-                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core">Addv. MN Core</a></strong> - Versión: v. 1.0.9.81</li>
-                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-ext">Addv. MN Core Ext</a></strong> - Versión: v. 1.0.0.6</li>
-                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-fields">Addv. MN Core Fields</a></strong> - Versión: v. 1.0.0.10</li>
-                <li><strong>Addv. MN Core MB3</strong> - Versión: v. 1.0.0.2</li>
-                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-mb3">Addv. MN Core MB3</a></strong> - Versión: v. 1.0.0.0</li>
-                <!-- Add more extensions as needed -->
+                <li><strong><a href="https://github.com/Addvantit/Addv.-MN-Core">Addv. MN
+                            Core</a></strong> - Versión: v. 1.0.9.81</li>
+                <li><strong><a href="https://github.com/Addvantit/Addv.-MN-Core-Ext">Addv. MN Core
+                            Ext</a></strong> - Versión: v. 1.0.0.6</li>
+                <li><strong><a href="https://github.com/Addvantit/Addv.-MN-Core-Fields">Addv. MN Core
+                            Fields</a></strong> - Versión: v. 1.0.0.10</li>
+                <li><strong><a href="https://github.com/Addvantit/Addv.-MN-Core-MB3X">Addv. MN Core MB3</a></strong> - Versión: v. 1.0.0.2</li>
+                <li><strong><a href="https://github.com/Addvantit/Addv.-MN-Core-MB3">Addv. MN Core
+                            MB3</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href=""></a>ADDVANTIT-ModelDescription 2 (Falta Agregar al Repositorio)</a></strong> - Versión: v. 1.0.0.5</li>
+                <li><strong><a href="https://github.com/Addvantit/ALProject11">ALProject11</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/ALReportVSPMN">ALReportVSPMN</a></strong> - Versión: v. 1.0.0.14</li>
+                <li><strong><a href="https://github.com/Addvantit/Calculo-Descuentos-MN-Golfo">Calculo Descuentos MN Golfo</a></strong> - Versión: v. 1.0.0.8</li>
+                <li><strong><a href="https://github.com/Addvantit/Compras">Compras</a></strong> -
+                    Versión: v. 1.0.0.6</li>
+                <li><strong><a href="https://github.com/Addvantit/Construganas">Construganas</a></strong> - Versión: v. 2.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/Cotizaci-n-Requerimiento">Cotización Requerimiento</a></strong> - Versión: v. 18.7.1541.3</li>
+                <li><strong><a href="https://github.com/Addvantit/Cr.-Memo-Timbrado">Cr. Memo
+                            Timbrado</a></strong> - Versión: v. 1.0.0.2</li>
+                <li><strong><a
+                            href="https://github.com/Addvantit/Creaci-n-de-archivos-de-texto-para-bancos">Creación
+                            de archivos de texto para bancos</a></strong> - Versión: v. 17.6.1541.1</li>
+                <li><strong><a
+                            href="https://github.com/Addvantit/Devolucion-facturado-no-entregado">Devolución
+                            facturado no entregado</a></strong> - Versión: v. 1.0.0.6</li>
+                <li><strong><a href="https://github.com/Addvantit/Ecommerce-WebService">Ecommerce WebService</a></strong> - Versión: v. 1.0.0.41</li>
+                <li><strong><a href="https://github.com/Addvantit/Ecommerce_Mix">Ecommerce_Mix</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/Exportar-ImportarListaPrecios">Exportar-ImportarListaPrecios</a></strong> - Versión: v. 1.0.0.7</li>
+                <li><strong><a href="https://github.com/Addvantit/Facturado-no-Entregado">Facturado no Entregado</a></strong> - Versión: v. 19.0.0.39</li>
+                <li><strong>FielCD - AsociónDocumentos (Propiedad SSH)</strong> - Versión: v. 1.0.0.3</li>
+                <li><strong>SSH -
+                            Factura electrónica - BC365(Propiedad SSH)</strong> - Versión: v. 1.0.0.47</li>
+                <li><strong><a href="https://github.com/Addvantit/HotFix-Discounts-Quotes">HotFix-Discounts-Quotes</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/HOTFix_MovsProductos_Positive">HOTFix_MovsProductos_Positive</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong>LS Central System App(Propiedad Aptos)</strong> - Versión: v. 18.1.0.14684</li>
+                <li><strong><a href="https://github.com/Addvantit/MN-BarCode">MN-BarCode</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/MN-Golfo">MNGOLFO</a></strong> - Versión: v. 1.0.1.7</li>
+                <li><strong><a href="https://github.com/Addvantit/MovsProducto">MovsProducto</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/Ocultar-detalle-de-Pedido-de-Compra">Ocultar detalle de Pedido de Compra</a></strong> - Versión: v. 18.7.1541.8</li>
+                <li><strong><a href="https://github.com/Addvantit/Pagatodo">PagaTodo</a></strong> - Versión: v. 2.0.0.4</li>
+                <li><strong><a href="https://github.com/Addvantit/PBA-Evidencia-Pago-a-Proveedores">PBA Evidencia Pago a Proveedores</a></strong> - Versión: v. 1.0.0.4</li>
+                <li><strong><a href="https://github.com/Addvantit/PinPadAddvantit">PinPadAddvantit</a></strong> - Versión: v. 1.0.0.31</li>
+                <li><strong><a href="https://github.com/Addvantit/QtyAvailable">QtyAvailable</a></strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/Reembolso-Clientes">Reembolso
+                            Clientes</a></strong> - Versión: v. 1.0.0.1</li>
+                <li><strong><a href="https://github.com/Addvantit/Reporte-Pedido-de-Compra">Reporte Pedido de Compra</a></strong> - Versión: v. 17.6.1541.15</li>
+                <li><strong><a href="https://github.com/Addvantit/Reporte-Reclamaciones">Reporte Reclamaciones</a></strong> - Versión: v. 18.7.1541.4</li>
+                <li><strong><a href="https://github.com/Addvantit/SaldosIniciales">SaldosIniciales</a></strong> - Versión: v. 1.0.0.1</li>
+                <li><strong><a href="https://github.com/Addvantit/TicketHotFix-LSCentral">>TicketHotFix-LSCentral</a</strong> - Versión: v. 1.0.0.0</li>
+                <li><strong><a href="https://github.com/Addvantit/Utilerias">Utilerías</a></strong> -
+                    Versión: v. 1.0.0.0</li>
+                <li><strong><a
+                            href="https://github.com/Addvantit/VerificadorPrecios">VerificadorPrecios</a></strong>
+                    - Versión: v. 1.0.0.6</li>
+                <li><strong><a
+                            href="https://github.com/Addvantit/WebServicesEcommerce">WebServicesEcommerce</a></strong>
+                    - Versión: v. 1.0.0.24</li>
+                    <li><strong><a
+                        href="https://github.com/Addvantit/Envio-a-Entregas-Confiables-Servicio-Windows">Servicios Externo EC</a></strong>
+                - Versión: v. 1.0.0.24</li>
+                <li><strong><a
+                    href="https://github.com/Addvantit/Envio-Ecommerce-Servicio-Windows">Servicios Externo Ecomerce</a></strong>
+            - Versión: v. 1.0.0.24</li>
             </ul>
         </div>
     </div>
@@ -243,9 +337,17 @@
         // Accordion functionality for Extensions List
         var acc = document.getElementsByClassName("accordion");
         for (var i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
+            acc[i].addEventListener("click", function () {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
-                } &#8203;:contentReference[oaicite:0]{index=0}&#8203;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
