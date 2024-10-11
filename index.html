@@ -1,168 +1,251 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentación de Extensiones en Business Central</title>
+    <title>Business Central Extensions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            color: #004080;
-        }
-        h2 {
-            color: #0059b3;
-        }
-        a {
-            color: #0080ff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        footer {
-            margin-top: 30px;
-            padding: 10px;
-            background-color: #f2f2f2;
+
+        header {
+            background-color: #0073e6;
+            padding: 1rem;
+            color: white;
             text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background-color: #005bb5;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        .container {
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        h2 {
+            color: #005bb5;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #0073e6;
+        }
+
+        .accordion {
+            background-color: #0073e6;
+            color: white;
+            cursor: pointer;
+            padding: 1rem;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #005bb5;
+        }
+
+        .accordion:after {
+            content: '\\002B'; /* Plus symbol */
+            font-size: 1.5rem;
+            color: white;
+            float: right;
+        }
+
+        .accordion.active:after {
+            content: "\\2212"; /* Minus symbol */
+        }
+
+        .panel {
+            background-color: #f4f4f9;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            padding-left: 1.5rem;
+        }
+
+        .panel ul {
+            padding-left: 1rem;
+        }
+
+        .panel ul li {
+            list-style-type: none;
+            padding: 0.5rem 0;
+        }
+
+        .panel ul li a {
+            text-decoration: none;
+            color: #005bb5;
+        }
+
+        .panel ul li a:hover {
+            color: #ffdd57;
+        }
+
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
     </style>
 </head>
 <body>
+    <header>
+        <h1>Documentación de Extensiones para Business Central</h1>
+    </header>
 
-    <h1>Documentación Básica de Objetos en Business Central</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#extensions">Extensiones</a></li>
+            <li><a href="#objectives">Objetivos</a></li>
+            <li><a href="#phases">Fases</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <h2>¿Qué es Microsoft Dynamics 365 Business Central?</h2>
-    <p>
-        Microsoft Dynamics 365 Business Central es un sistema de gestión empresarial diseñado para ayudar a las empresas a gestionar finanzas, ventas, servicio al cliente y operaciones. Es una solución en la nube que se adapta a las necesidades de pequeñas y medianas empresas.
-    </p>
+    <div class="container">
+        <h2 id="objectives">Objetivos de la Implementación</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Optimizar la Gestión de Inventarios</h3>
+                <p>Mejorar el control y la visibilidad de los materiales en las tres tiendas y el patio de distribución.</p>
+            </div>
+            <div class="card">
+                <h3>Mejorar la Atención al Cliente</h3>
+                <p>Facilitar el proceso de ventas y la gestión de pedidos para una atención más eficiente.</p>
+            </div>
+            <div class="card">
+                <h3>Aumentar la Eficiencia Operativa</h3>
+                <p>Integrar procesos financieros, de ventas y logística en una única plataforma.</p>
+            </div>
+            <div class="card">
+                <h3>Facilitar el Análisis de Datos</h3>
+                <p>Proporcionar informes y análisis en tiempo real para la toma de decisiones informadas.</p>
+            </div>
+        </div>
 
-    <h2>Objetivos de la Implementación</h2>
-    <ul>
-        <li><strong>Optimizar la gestión de inventarios:</strong> Mejorar el control y la visibilidad de los materiales en las tres tiendas y el patio de distribución.</li>
-        <li><strong>Mejorar la atención al cliente:</strong> Facilitar el proceso de ventas y la gestión de pedidos.</li>
-        <li><strong>Aumentar la eficiencia operativa:</strong> Integrar procesos financieros, de ventas y de logística en una única plataforma.</li>
-        <li><strong>Facilitar el análisis de datos:</strong> Proporcionar informes y análisis en tiempo real para la toma de decisiones informadas.</li>
-    </ul>
+        <h2 id="phases">Fases de Implementación</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>1. Análisis de Requerimientos</h3>
+                <p>Reuniones con los líderes de MN del Golfo para entender sus necesidades específicas en gestión de inventarios, ventas y finanzas.</p>
+            </div>
+            <div class="card">
+                <h3>2. Configuración de Business Central</h3>
+                <p>Creación de la estructura organizativa y gestión de inventarios en tiempo real.</p>
+            </div>
+            <div class="card">
+                <h3>3. Integración de LS Central</h3>
+                <p>Implementación de puntos de venta y CRM, además de la configuración de reportes.</p>
+            </div>
+            <div class="card">
+                <h3>4. Capacitación</h3>
+                <p>Entrenamiento al personal en el uso de Business Central, LS Central y análisis de datos.</p>
+            </div>
+            <div class="card">
+                <h3>5. Pruebas y Ajustes</h3>
+                <p>Realización de pruebas de funcionalidad y ajustes según el feedback del personal.</p>
+            </div>
+            <div class="card">
+                <h3>6. Despliegue</h3>
+                <p>Lanzamiento de Business Central y LS Central en todas las tiendas y la bodega.</p>
+            </div>
+        </div>
 
-    <h2>Fases de Implementación</h2>
-    <ul>
-        <li><strong>1. Análisis de Requerimientos:</strong> Reuniones con los líderes de MN del Golfo para entender sus necesidades específicas en gestión de inventarios, ventas y finanzas.</li>
-        <li><strong>2. Configuración de Business Central:</strong> Creación de la estructura organizativa en Business Central, implementación de módulos de inventarios y finanzas.</li>
-        <li><strong>3. Integración de LS Central:</strong> Instalación de sistemas POS en las tiendas, integrando LS Central para facilitar las transacciones y reportes.</li>
-        <li><strong>4. Capacitación:</strong> Entrenamiento al personal en el uso de Business Central y LS Central.</li>
-        <li><strong>5. Pruebas y Ajustes:</strong> Pruebas de funcionalidad y ajustes según feedback del personal.</li>
-        <li><strong>6. Despliegue:</strong> Lanzamiento completo del sistema en tiendas y bodega.</li>
-    </ul>
+        <h2 id="extensions">Extensiones Instaladas</h2>
+        <button class="accordion">Lista de Extensiones</button>
+        <div class="panel">
+            <ul>
+                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core">Addv. MN Core</a></strong> - Versión: v. 1.0.9.81</li>
+                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-ext">Addv. MN Core Ext</a></strong> - Versión: v. 1.0.0.6</li>
+                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-fields">Addv. MN Core Fields</a></strong> - Versión: v. 1.0.0.10</li>
+                <li><strong>Addv. MN Core MB3</strong> - Versión: v. 1.0.0.2</li>
+                <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-mb3">Addv. MN Core MB3</a></strong> - Versión: v. 1.0.0.0</li>
+                <!-- Add more extensions as needed -->
+            </ul>
+        </div>
+    </div>
 
-    <h2>Objetos en Business Central</h2>
-    <p>En Business Central, los "objetos" son componentes que forman la base del sistema. Existen varios tipos de objetos, cada uno con una función específica:</p>
-    <ul>
-        <li><a href="#tablas">Tablas</a>: Almacenan datos, como información de clientes, proveedores, etc.</li>
-        <li><a href="#paginas">Páginas</a>: Interfaces que los usuarios ven e interactúan.</li>
-        <li><a href="#informes">Informes</a>: Generan reportes con información específica.</li>
-        <li><a href="#consultas">Consultas</a>: Extraen y combinan datos de diferentes tablas.</li>
-        <li><a href="#codeunits">Codeunits</a>: Contienen la lógica de negocio.</li>
-        <li><a href="#enums">Enums</a>: Tipos de datos con un conjunto de valores predefinidos.</li>
-        <li><a href="#page_extensions">Page Extensions</a>: Extienden las páginas existentes sin modificarlas.</li>
-        <li><a href="#table_extensions">Table Extensions</a>: Añaden nuevos campos a tablas existentes.</li>
-        <li><a href="#control_add_ins">Control Add-ins</a>: Permiten agregar controles personalizados a las páginas.</li>
-        <li><a href="#report_extensions">Report Extensions</a>: Permiten personalizar informes existentes.</li>
-    </ul>
+    <footer>
+        <p>&copy; 2024 MN del Golfo - Todos los derechos reservados</p>
+    </footer>
 
-    <h2 id="tablas">Tablas</h2>
-    <p>Las tablas almacenan los datos que Business Central utiliza para su operación. Por ejemplo, la tabla "Customer" contiene datos como nombres, direcciones y números de contacto de los clientes.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-table-object">Más sobre Tablas</a>
-
-    <h2 id="paginas">Páginas</h2>
-    <p>Las páginas son la interfaz gráfica del usuario. Estas son las pantallas donde los usuarios interactúan con los datos en Business Central.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-page-object">Más sobre Páginas</a>
-
-    <h2 id="informes">Informes</h2>
-    <p>Los informes generan documentos con datos específicos para la toma de decisiones. Un ejemplo sería un informe de ventas mensual.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-report-object">Más sobre Informes</a>
-
-    <h2 id="consultas">Consultas</h2>
-    <p>Las consultas permiten extraer y combinar datos de diferentes tablas. Son útiles para obtener información sin crear un informe completo.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-query-object">Más sobre Consultas</a>
-
-    <h2 id="codeunits">Codeunits</h2>
-    <p>Los codeunits contienen la lógica de negocio. Aquí se definen los procesos y las interacciones entre los datos en Business Central.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-codeunit-object">Más sobre Codeunits</a>
-
-    <h2 id="enums">Enums</h2>
-    <p>Los enums son tipos de datos que definen un conjunto de valores posibles. Por ejemplo, un enum podría definir el estado de un pedido como "Pendiente", "Enviado" o "Cancelado".</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-enumeration">Más sobre Enums</a>
-
-    <h2 id="page_extensions">Page Extensions</h2>
-    <p>Las Page Extensions permiten extender las funcionalidades de las páginas existentes sin modificar su código fuente original.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-page-ext-object">Más sobre Page Extensions</a>
-
-    <h2 id="table_extensions">Table Extensions</h2>
-    <p>Las Table Extensions permiten añadir nuevos campos a las tablas ya existentes en Business Central, sin modificar su estructura original.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-table-ext-object">Más sobre Table Extensions</a>
-
-    <h2 id="control_add_ins">Control Add-ins</h2>
-    <p>Los Control Add-ins permiten agregar controles personalizados a las páginas de Business Central, como botones interactivos o gráficos visuales.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-control-addin-object">Más sobre Control Add-ins</a>
-
-    <h2 id="report_extensions">Report Extensions</h2>
-    <p>Las Report Extensions permiten personalizar los informes existentes, añadiendo nuevos campos o modificando el diseño del informe sin alterar el original.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-report-ext-object">Más sobre Report Extensions</a>
-
-    <h2>Extensiones en Business Central</h2>
-    <p>Las extensiones son una forma de personalizar y ampliar la funcionalidad de Business Central sin modificar el código base del sistema. Estas extensiones permiten añadir nuevas características, como páginas, tablas o informes, adaptando el sistema a las necesidades de cada empresa.</p>
-    <a href="https://learn.microsoft.com/es-es/dynamics365/business-central/dev-itpro/developer/devenv-extension-overview">Más sobre Extensiones</a>
-
-    <h2>Listado de Extensiones</h2>
-    <p>A continuación, se listan las extensiones de Business Central a entregar para el proyecto de MN del Golfo:</p>
-
-<ul>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core">Addv. MN Core</a></strong> - Versión: v. 1.0.9.81</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-ext">Addv. MN Core Ext</a></strong> - Versión: v. 1.0.0.6</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-fields">Addv. MN Core Fields</a></strong> - Versión: v. 1.0.0.10</li>
-    <li><strong>Addv. MN Core MB3</strong> - Versión: v. 1.0.0.2</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/addv.-mn-core-mb3">Addv. MN Core MB3</a></strong> - Versión: v. 1.0.0.0</li>
-    <li><strong>ADDVANTIT-ModelDescription 2</strong> - Versión: v. 1.0.0.5</li>
-    <li><strong>ALProject11</strong> - Versión: v. 1.0.0.0</li>
-    <li><strong>ALReportVSPMN</strong> - Versión: v. 1.0.0.14</li>
-    <li><strong>Calculo Descuentos MN Golfo</strong> - Versión: v. 1.0.0.8</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/compras">Compras</a></strong> - Versión: v. 1.0.0.6</li>
-    <li><strong>Construganas</strong> - Versión: v. 2.0.0.0</li>
-    <li><strong>Cotización Requerimiento</strong> - Versión: v. 18.7.1541.3</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/cr.-memo-timbrado">Cr. Memo Timbrado</a></strong> - Versión: v. 1.0.0.2</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/creación-de-archivos-de-texto-para-bancos">Creación de archivos de texto para bancos</a></strong> - Versión: v. 17.6.1541.1</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/devolucion-facturado-no-entregado">Devolucion facturado no entregado</a></strong> - Versión: v. 1.0.0.6</li>
-    <li><strong>Ecommerce WebService</strong> - Versión: v. 1.0.0.41</li>
-    <li><strong>Ecommerce_Mix</strong> - Versión: v. 1.0.0.0</li>
-    <li><strong>Exportar-ImportarListaPrecios</strong> - Versión: v. 1.0.0.7</li>
-    <li><strong>Facturado no Entregado</strong> - Versión: v. 19.0.0.39</li>
-    <li><strong>FielCD - AsociónDocumentos</strong> - Versión: v. 1.0.0.3</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/ssh---factura-electrónica---bc365">SSH - Factura electrónica - BC365</a></strong> - Versión: v. 1.0.0.47</li>
-    <li><strong>LS Central System App</strong> - Versión: v. 18.1.0.14684</li>
-    <li><strong>MN-BarCode</strong> - Versión: v. 1.0.0.0</li>
-    <li><strong>MNGOLFO</strong> - Versión: v. 1.0.1.7</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/north-america-languages">North America Languages</a></strong> - Versión: v. 18.1.0.0</li>
-    <li><strong>Ocultar detalle de Pedido de Compra</strong> - Versión: v. 18.7.1541.8</li>
-    <li><strong>PagaTodo</strong> - Versión: v. 2.0.0.4</li>
-    <li><strong>PBA Evidencia Pago a Proveedores</strong> - Versión: v. 1.0.0.4</li>
-    <li><strong>PinPadAddvantit</strong> - Versión: v. 1.0.0.31</li>
-    <li><strong>QtyAvailable</strong> - Versión: v. 1.0.0.0</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/reembolso-clientes">Reembolso Clientes</a></strong> - Versión: v. 1.0.0.1</li>
-    <li><strong>Reporte Pedido de Compra</strong> - Versión: v. 17.6.1541.15</li>
-    <li><strong>Reporte Reclamaciones</strong> - Versión: v. 18.7.1541.4</li>
-    <li><strong>SaldosIniciales</strong> - Versión: v. 1.0.0.1</li>
-    <li><strong>SSH - Campos adicionales - BC365</strong> - Versión: v. 1.0.0.2</li>
-    <li><strong>SSHFiel For LS Retail</strong> - Versión: v. 1.0.0.41</li>
-    <li><strong>TicketHotFix-LSCentral</strong> - Versión: v. 1.0.0.0</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/utilerias">Utilerias</a></strong> - Versión: v. 1.0.0.0</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/verificadorprecios">VerificadorPrecios</a></strong> - Versión: v. 1.0.0.6</li>
-    <li><strong><a href="https://learn.microsoft.com/en-us/dynamics365/webservicesecommerce">WebServicesEcommerce</a></strong> - Versión: v. 1.0.0.24</li>
-</ul>
-
-   
+    <script>
+        // Accordion functionality for Extensions List
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } &#8203;:contentReference[oaicite:0]{index=0}&#8203;
